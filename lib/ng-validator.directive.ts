@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from "@angular/core";
+import { Directive, ElementRef, Input, ViewChild } from "@angular/core";
 import { Branch, NgValidatorOptions, NgValidatorType } from "./ng-validator.interface";
 import { customLog } from "./log.interface";
 
@@ -18,7 +18,8 @@ export class NgValidatorDirective {
   private nodeName!: string
   private nodeTree: Branch[] = []
   private validNodeList = ['INPUT', 'SELECT', 'TEXTAREA']
-  private validNode: HTMLElement | Boolean = false
+  private validNode!: HTMLElement
+
 
   private setDefaultVal() {
     this.node = this.ref.nativeElement

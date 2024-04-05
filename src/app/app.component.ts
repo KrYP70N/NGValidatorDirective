@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NgValidatorDirective } from '../../lib/ng-validator.directive';
 
@@ -12,4 +12,5 @@ import { NgValidatorDirective } from '../../lib/ng-validator.directive';
 })
 export class AppComponent {
   title = 'NgValidatorDirective';
+  @ViewChild('data') data!: ElementRef
 }
